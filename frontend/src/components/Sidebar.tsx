@@ -124,22 +124,22 @@ export default function Sidebar({ currentPage, onNavigate, conflictCount = 0 }: 
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-72 sidebar-bg text-white flex flex-col z-50">
+    <aside className="fixed left-0 top-0 h-screen w-64 sidebar-bg text-white flex flex-col z-50">
       {/* Logo Section */}
-      <div className="p-10">
-        <div className="flex items-center space-x-4 mb-3">
-          <div className="p-3 bg-primary/10 rounded-2xl animate-pulse-slow border border-primary/20">
-            <Brain className="w-7 h-7 text-primary" />
+      <div className="p-8">
+        <div className="flex items-center space-x-3 mb-2">
+          <div className="p-2.5 bg-primary/10 rounded-xl animate-pulse-slow border border-primary/20">
+            <Brain className="w-6 h-6 text-primary" />
           </div>
           <div>
-            <h1 className="font-black text-2xl tracking-tighter text-white">
+            <h1 className="font-black text-xl tracking-tighter text-white">
               EVENTVERSE
             </h1>
           </div>
         </div>
         <div className="flex items-center space-x-2 ml-1">
           <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#8e8e93] font-black">
+          <p className="text-[9px] uppercase tracking-[0.3em] text-[#8e8e93] font-black">
             AI CONTROL ROOM
           </p>
         </div>

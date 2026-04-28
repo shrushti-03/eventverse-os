@@ -171,57 +171,57 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
       {/* Dynamic Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-4xl font-black text-white tracking-tighter flex items-center">
+          <h1 className="text-3xl font-black text-white tracking-tighter flex items-center">
             Neural Architect
-            <Sparkles className="w-8 h-8 ml-3 text-primary" />
+            <Sparkles className="w-7 h-7 ml-3 text-primary" />
           </h1>
-          <p className="text-[#8e8e93] font-bold text-sm uppercase tracking-[0.2em] mt-1">
+          <p className="text-[#8e8e93] font-bold text-[11px] uppercase tracking-[0.2em] mt-1">
             Constructing high-impact temporal nodes
           </p>
         </div>
         <button
           onClick={handleGenerateSuggestions}
           disabled={isGenerating}
-          className="btn-premium px-10 py-5 flex items-center space-x-3"
+          className="btn-premium px-8 py-4 flex items-center space-x-3 text-xs"
         >
-          {isGenerating ? <Loader2 className="w-5 h-5 animate-spin" /> : <Wand2 className="w-5 h-5" />}
-          <span>{isGenerating ? 'GENESIS IN PROGRESS...' : 'AI SMART FILL'}</span>
+          {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4" />}
+          <span>{isGenerating ? 'GENESIS...' : 'AI SMART FILL'}</span>
         </button>
       </div>
 
       {/* AI Strategy Insights */}
       {showSuggestions && prediction && (
-        <div className="premium-card p-10 bg-gradient-to-br from-primary/10 to-transparent border-primary/20 animate-soft-fade">
-          <div className="flex items-center space-x-4 mb-8">
-            <div className="p-3 bg-primary/20 rounded-2xl">
-              <Brain className="w-6 h-6 text-primary outline-none" />
+        <div className="premium-card p-8 bg-gradient-to-br from-primary/10 to-transparent border-primary/20 animate-soft-fade">
+          <div className="flex items-center space-x-4 mb-6">
+            <div className="p-2.5 bg-primary/20 rounded-xl">
+              <Brain className="w-5 h-5 text-primary outline-none" />
             </div>
             <div>
-              <h3 className="text-xl font-black text-white tracking-tight">AI Strategy Insight</h3>
-              <p className="text-[10px] uppercase font-black tracking-widest text-primary">Predictive modeling complete</p>
+              <h3 className="text-lg font-black text-white tracking-tight">AI Strategy Insight</h3>
+              <p className="text-[9px] uppercase font-black tracking-widest text-primary">Predictive modeling complete</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-black/40 rounded-3xl border border-white/5 group hover:border-primary/30 transition-all">
-              <p className="text-[10px] font-black text-[#8e8e93] uppercase tracking-widest mb-2">Turnout Prediction</p>
-              <div className="text-4xl font-black text-white">{prediction.predicted_turnout}</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-5 bg-black/40 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all">
+              <p className="text-[9px] font-black text-[#8e8e93] uppercase tracking-widest mb-2">Turnout Prediction</p>
+              <div className="text-3xl font-black text-white">{prediction.predicted_turnout}</div>
               <div className="mt-4 w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
                 <div className="h-full bg-primary" style={{ width: `${(prediction.predicted_turnout / formData.max_capacity) * 100}%` }} />
               </div>
             </div>
-            <div className="p-6 bg-black/40 rounded-3xl border border-white/5 group hover:border-green-500/30 transition-all">
-              <p className="text-[10px] font-black text-[#8e8e93] uppercase tracking-widest mb-2">Confidence Level</p>
-              <div className="text-4xl font-black text-green-400">{Math.round(prediction.confidence * 100)}%</div>
-              <p className="text-[10px] font-bold text-[#8e8e93] mt-2 uppercase tracking-tighter">Neural correlation: High</p>
+            <div className="p-5 bg-black/40 rounded-2xl border border-white/5 group hover:border-green-500/30 transition-all">
+              <p className="text-[9px] font-black text-[#8e8e93] uppercase tracking-widest mb-2">Confidence Level</p>
+              <div className="text-3xl font-black text-green-400">{Math.round(prediction.confidence * 100)}%</div>
+              <p className="text-[9px] font-bold text-[#8e8e93] mt-2 uppercase tracking-tighter">Neural correlation: High</p>
             </div>
-            <div className="p-6 bg-black/40 rounded-3xl border border-white/5">
-              <p className="text-[10px] font-black text-[#8e8e93] uppercase tracking-widest mb-4">Strategic Factors</p>
-              <div className="space-y-3">
+            <div className="p-5 bg-black/40 rounded-2xl border border-white/5">
+              <p className="text-[9px] font-black text-[#8e8e93] uppercase tracking-widest mb-4">Strategic Factors</p>
+              <div className="space-y-2">
                 {prediction.factors.slice(0, 2).map((f, i) => (
                   <div key={i} className="flex items-center space-x-2">
-                    <div className={`w-1.5 h-1.5 rounded-full ${f.impact === 'positive' ? 'bg-green-400' : 'bg-red-400'}`} />
-                    <span className="text-[10px] font-black text-white uppercase tracking-tighter">{f.factor}</span>
+                    <div className={`w-1 h-1 rounded-full ${f.impact === 'positive' ? 'bg-green-400' : 'bg-red-400'}`} />
+                    <span className="text-[9px] font-black text-white uppercase tracking-tighter">{f.factor}</span>
                   </div>
                 ))}
               </div>
@@ -238,14 +238,14 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
              <h2 className="text-2xl font-black text-white tracking-tighter uppercase">Core Specifications</h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 gap-8">
             <InputField label="Operational Title" icon={FileText} required>
               <input
                 type="text"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                 placeholder="Declare the node title..."
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 rounded-2xl px-6 py-5 text-white transition-all font-black text-sm placeholder:text-[#4a5568]"
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 rounded-2xl px-5 py-4 text-white transition-all font-black text-sm placeholder:text-[#4a5568]"
                 required
               />
             </InputField>
@@ -255,18 +255,18 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="Detailed operational parameters..."
-                rows={4}
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 rounded-2xl px-6 py-5 text-white transition-all font-bold text-sm placeholder:text-[#4a5568] resize-none"
+                rows={3}
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 rounded-2xl px-5 py-4 text-white transition-all font-bold text-sm placeholder:text-[#4a5568] resize-none"
               />
             </InputField>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <InputField label="Classification" icon={Zap} required>
                 <div className="relative">
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-6 py-5 text-white transition-all font-black text-sm appearance-none cursor-pointer"
+                    className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-4 text-white transition-all font-black text-sm appearance-none cursor-pointer"
                     required
                   >
                     <option value="" className="bg-[#09090b]">Select Class</option>
@@ -282,26 +282,26 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
                   type="number"
                   value={formData.max_capacity}
                   onChange={(e) => setFormData({ ...formData, max_capacity: parseInt(e.target.value) || 0 })}
-                  className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-6 py-5 text-white transition-all font-black text-sm"
+                  className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-4 text-white transition-all font-black text-sm"
                 />
               </InputField>
             </div>
           </div>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           <div className="flex items-center space-x-4">
-             <div className="w-1.5 h-8 bg-secondary rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
-             <h2 className="text-2xl font-black text-white tracking-tighter uppercase">Temporal Matrix</h2>
+             <div className="w-1 h-6 bg-secondary rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
+             <h2 className="text-xl font-black text-white tracking-tighter uppercase">Temporal Matrix</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <InputField label="Start Date" icon={Calendar} required>
               <input
                 type="date"
                 value={formData.start_date}
                 onChange={(e) => setFormData({ ...formData, start_date: e.target.value })}
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-5 text-white font-black text-xs [color-scheme:dark]"
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-4 py-4 text-white font-black text-xs [color-scheme:dark]"
                 required
               />
             </InputField>
@@ -310,7 +310,7 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
                 type="time"
                 value={formData.start_time}
                 onChange={(e) => setFormData({ ...formData, start_time: e.target.value })}
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-5 text-white font-black text-xs [color-scheme:dark]"
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-4 py-4 text-white font-black text-xs [color-scheme:dark]"
                 required
               />
             </InputField>
@@ -319,7 +319,7 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
                 type="date"
                 value={formData.end_date}
                 onChange={(e) => setFormData({ ...formData, end_date: e.target.value })}
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-5 text-white font-black text-xs [color-scheme:dark]"
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-4 py-4 text-white font-black text-xs [color-scheme:dark]"
                 required
               />
             </InputField>
@@ -328,20 +328,20 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
                 type="time"
                 value={formData.end_time}
                 onChange={(e) => setFormData({ ...formData, end_time: e.target.value })}
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-5 text-white font-black text-xs [color-scheme:dark]"
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-4 py-4 text-white font-black text-xs [color-scheme:dark]"
                 required
               />
             </InputField>
           </div>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           <div className="flex items-center space-x-4">
-             <div className="w-1.5 h-8 bg-green-500 rounded-full" />
-             <h2 className="text-2xl font-black text-white tracking-tighter uppercase">Logistics Venue</h2>
+             <div className="w-1 h-6 bg-green-500 rounded-full" />
+             <h2 className="text-xl font-black text-white tracking-tighter uppercase">Logistics Venue</h2>
           </div>
           
-          <div className="grid grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 gap-8">
             <InputField label="Sector" icon={MapPin} required>
               <select
                 value={formData.venue}
@@ -349,7 +349,7 @@ export default function CreateEvent({ onNavigate }: CreateEventProps) {
                   setFormData({ ...formData, venue: e.target.value });
                   handleCheckConflicts();
                 }}
-                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-6 py-5 text-white font-black text-sm appearance-none cursor-pointer"
+                className="w-full bg-black/60 border border-white/10 focus:border-primary/50 rounded-2xl px-5 py-4 text-white font-black text-sm appearance-none cursor-pointer"
                 required
               >
                 <option value="" className="bg-[#09090b]">Select Neutral Sector</option>
