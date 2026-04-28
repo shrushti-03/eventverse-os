@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+build/
+
+# Misc
+.DS_Store
+*.pem
+
+# Env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Verity
+.vercel
+
+# Python
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.db
+*.sqlite3
+.pytest_cache/
+
+# Project Specific
+DOCUMENTATION/docs/
+temp_ppt/
+extract_slides.ps1
+temp.zip
+[EXT]*
+EVENTVERSE-OS.pptx
+eventverse-os.zip
